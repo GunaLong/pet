@@ -6,13 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>動物領養系統</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="stylesheet" href="../_css/bootstrap.css" />
+
     <link rel="shortcut icon" href="../img/logo.png" />
     <link rel="bookmark" href="../img/logo.png" />
     <link rel="stylesheet" href="../index_style.css" />
     <base target="_blank">
 
-    <script src="../_js/bootstrap.bundle.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    
   </head>
   <body onload="now_time()">
     <div class="d-none d-lg-block">
@@ -21,9 +23,10 @@
       /></a>
     </div>
     <!-- 導覽列 -->
-    <nav class="navbar navbar-expand-lg navbar-info fixed-top">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+    <nav class="navbar navbar-expand-lg navbar-info fixed-top " >
+      <div class="container-fluid ">
+        
+        <a class="navbar-brand text-dark" href="#">
           <img src="../img/logo.png" width="30px" />動物收養網</a
         >
         <button
@@ -37,25 +40,25 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
               <a
-                class="nav-link active"
+                class="nav-link active text-dark"
                 aria-current="page"
-                href="http://127.0.0.1:5500/index/index.html"
+                href="/index/index.html"
                 >首頁</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">動物領養系統</a>
+              <a class="nav-link text-dark" href="/index/adoption.html">動物領養系統</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="http://127.0.0.1:5501/index/blog_index.html">留言板</a>
+              <a class="nav-link text-dark" href="/index/blog_index.html">留言板</a>
             </li>
             <li class="nav-item dropdown">
               <a
-                class="nav-link dropdown-toggle"
+                class="nav-link dropdown-toggle text-dark"
                 href="#"
                 id="navbarDropdown"
                 role="button"
@@ -69,21 +72,20 @@
                 aria-labelledby="navbarDropdown"
                 style="background-color: #c07d62"
               >
-              <li>
-                <a class="dropdown-item" href="#">愛心捐款</a>
-              </li>
-              <li><a class="dropdown-item" href="#">捐贈物資</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">愛心捐款</a>
+                </li>
+                <li><a class="dropdown-item" href="#">捐贈物資</a></li>
 
-              <li>
-                <a class="dropdown-item" href="#">助養</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="#">志工</a>
-              </li>
+                <li>
+                  <a class="dropdown-item" href="#">助養</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">志工</a>
+                </li>
               </ul>
             </li>
-          </ul>
-        
+          </ul> 
         <div class="float-end" id="time"></div>
       </div>
     </nav>
@@ -195,7 +197,7 @@
                 <div class="text-center cardtitle w-100">1</div>
                 <div class="card p-1 " >
                     
-                    <a href="http://127.0.0.1:5501/index/pet.html"><img src="../img/認養圖/黑白幼犬.jpg" class="w-100" height="200px"></a>
+                    <a href="=/index/pet.html"><img src="../img/認養圖/黑白幼犬.jpg" class="w-100" height="200px"></a>
                     <div class="card-body">
                       
                       <ul class="card-text ">
