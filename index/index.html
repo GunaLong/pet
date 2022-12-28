@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-tw">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>動物收養網</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="../_css/bootstrap.css" />
+    <link rel="shortcut icon" href="../img/logo.png" />
+    <link rel="bookmark" href="../img/logo.png" />
+    <link rel="stylesheet" href="../index_style.css">
+    <base target="_blank">
+
+    <script src="../_js/bootstrap.bundle.js"></script>
+    
+  </head>
+  <body onload="now_time()">
+    <!-- Go to top -->
+    <div class="d-none d-lg-block">
+      <a href="#" style="position:fixed;bottom: 5%;right: 3%;  "target="_self"><img src="../img/arrow-up-square.svg" width="50px"></a>
+    </div>
+    <!-- 導覽列 -->
+    
+    <nav class="navbar navbar-expand-lg navbar-info fixed-top " >
+      <div class="container-fluid ">
+        
+        <a class="navbar-brand" href="#">
+          <img src="../img/logo.png" width="30px" />動物收養網</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="http://127.0.0.1:5501/index/index.html"
+                >首頁</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="http://127.0.0.1:5501/index/adoption.html">動物領養系統</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="http://127.0.0.1:5501/index/blog_index.html">留言板</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                幫助我們
+              </a>
+              <ul
+                class="dropdown-menu"
+                aria-labelledby="navbarDropdown"
+                style="background-color: #c07d62"
+              >
+                <li>
+                  <a class="dropdown-item" href="#">愛心捐款</a>
+                </li>
+                <li><a class="dropdown-item" href="#">捐贈物資</a></li>
+
+                <li>
+                  <a class="dropdown-item" href="#">助養</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">志工</a>
+                </li>
+              </ul>
+            </li>
+          </ul> 
+        <div class="float-end" id="time"></div>
+      </div>
+    </nav>
+    <!-- 照片輪播 -->
+    <div class="container p-0 w-100" style="margin-top: 70px; " >
+      <div class="row justify-content-center align-item-center mt-md-5">
+        <div
+          id="carouselExampleDark"
+          class="col-12 col-md-8 carousel carousel-dark slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#carouselExampleDark"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleDark"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleDark"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"
+            ></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active img-fluid" data-bs-interval="5000">
+              <img src="../img/領養公告.jpg" class="d-block w-100" />
+            </div>
+            <div class="carousel-item img-fluid" data-bs-interval="5000">
+              <img src="../img/台中市友善寵物空間.png" class="d-block w-100" />
+            </div>
+            <div- class="carousel-item img-fluid" data-bs-interval="5000">
+              <img src="../img/領養圖.png" class="d-block w-100" />
+            </div->
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleDark"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleDark"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- 文字導覽列標題 -->
+    <div class="container mt-2">
+      <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+          <button
+            class="nav-link active"
+            id="nav-home-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#nav-home"
+            type="button"
+            role="tab"
+            aria-controls="nav-home"
+            aria-selected="true"
+          >
+            最新消息
+          </button>
+          <button
+            class="nav-link"
+            id="nav-profile-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#nav-profile"
+            type="button"
+            role="tab"
+            aria-controls="nav-profile"
+            aria-selected="false"
+          >
+            動保宣導
+          </button>
+          <button
+            class="nav-link"
+            id="nav-contact-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#nav-contact"
+            type="button"
+            role="tab"
+            aria-controls="nav-contact"
+            aria-selected="false"
+          >
+            宣導影片
+          </button>
+        </div>
+       </nav>
+       <!-- 文字導覽列內容1 -->
+      <div class="row justify-content-center">
+        <div class="col-12 tab-content mt-2" id="nav-tabContent">
+          <div
+            class="tab-pane fade show active"
+            id="nav-home"
+            role="tabpanel"
+            aria-labelledby="nav-home-tab"
+            style="
+              background-color: rgba(211, 211, 211, 0.2);
+              border-radius: 5px;
+              padding: 10px; ;
+            "
+          >
+            <h5>2022療癒犬夏令營－一起來動物之家后里園區療癒一夏～</h5>
+            <p class="small">臺中市動物保護防疫處</p>
+            <div class="row">
+              <div class="col-12 col-lg-2">
+                <img
+                  src="../img/5天營隊圓滿落幕-每位學員都拿到屬於自己的結業證書.jpg"
+                  width="200px"
+                />
+              </div>
+              <div class="col-12 col-lg-10 ">
+                <a href="#" class="link">
+                <h6 style="text-indent: 20px">
+                  炎炎夏日何處去？由社團法人台
+                  灣土也社區行動協會、相癒心理諮商所和動保處合作辦理「2022療癒犬夏令營－高階班」課程，今(27)日在動物之家后里園區舉行熱鬧的狗狗送養會，由一群經過初階班與進階班營隊訓練、已經懂得如何正確友善對待動物的孩子們學習承擔小主人與小訓犬師的責任，在短短5天的營隊時間裡協助照顧園區內4隻收容犬隻，訓練狗狗們聽從簡單的指令，並幫助他們在送養會上找到屬於自己的家。
+                </h6>
+              </a>
+              </div>
+            </div> 
+            <hr />
+            <div class="row line mb-3 pb-2 pb-lg-0">
+              <div class="col-lg-10 "><div id="s" class="d" >&ensp;</div><a href="#" class="link"> 
+                提升家禽免疫力，不怕疾病來攪局! 動保處辦理宣導會強化業者防疫觀念</a></div>
+              <div class="col-1 d-none  d-lg-flex ms-auto " ><p class="time">2022.09.15</p></div>
+            </div>
+            
+            <div class="row line mb-3 pb-2 pb-lg-0">
+              <div class="col-lg-10 "><div id="s" class="d" >&ensp;</div><a href="#" class="link"> 及早發現與治療是關鍵－貓奴不可不知的貓慢性腎臟病!</a></div>
+              <div class="col-1 d-none  d-lg-flex ms-auto " ><p class="time">2022.09.10</p></div>
+            </div>
+            
+            <div class="row line mb-3 pb-2 pb-lg-0">
+              <div class="col-lg-10 "><div id="s" class="d" >&ensp;</div><a href="#" class="link"> 本市養禽業者主動通報疫情 動保處及時完成防疫相關工作並籲請養禽業者加強防範</a></div>
+              <div class="col-1 d-none  d-lg-flex ms-auto " ><p class="time">2022.09.08</p></div>
+            </div>
+            
+            <div class="row line mb-3 pb-2 pb-lg-0">
+             <div class="col-lg-10 "><div id="s" class="d" >&ensp;</div> <a href="#" class="link " > 111年動物相關從業人員教育訓練登場－從動物園探討動物福利 </a></div>
+              <div class="col-1 d-none  d-lg-flex ms-auto " ><p class="time">2022.09.08</p></div>
+             
+            </div>
+            <div class="row justify-content-end">
+              <div class="col-3 "><a class="btn float-end" href="#" >更多</a></div>
+            </div>
+             
+          </div>
+           <!-- 文字導覽列內容2 -->
+          <div
+            class="tab-pane fade row"
+            id="nav-profile"
+            role="tabpanel"
+            aria-labelledby="nav-profile-tab"
+            style="
+              background-color: rgba(211, 211, 211, 0.2);
+              border-radius: 5px;
+              padding: 10px; ;
+            "
+          >
+            <div>
+              <h5 class="TNR">什麼是TNR</h5>
+              <br /><br />
+            </div>
+            <div class="row">
+              <div class="col-12 col-lg-8">
+                <b style="color: rgb(161, 134, 16); font-size: 24px">
+                  我們瞭解到無論如何努力，能救援的動物數量仍然十分有限，因此『台灣動物協會』目前的重點之一是在台灣各地推廣進行TNR計畫。TNR是英文縮寫:
+                  Trap捕捉－Neuter結紮－Return放回。
+                </b>
+                <br /><br />
+                <p>
+                  TNR是盡可能捕捉流浪動物，並且結紮後，再放回到他們原來居住的所在地。TNR是唯一證實能有效控制流浪動物數量增加的方法，並維持社區與動物品質的方法，也可以說是最人道的處理方法，TNR也可以縮減公家單位近50％控管動物的成本資源。
+                </p>
+                <br />
+                <p>
+                  傳統捕捉撲殺移除的方式, 無法全數捕捉動物,
+                  反倒會引發高死亡率予高出生率的循環。這種循環,在社區的具體表現就是叫春、打架與跳蚤。除了人道問題外,最主要的難處在於無法解決社區生活品質的要求。使用TNR方式控制社區動物數量的主要關鍵,
+                  在於計算出環境負載量後,確保每隻動物都失去繁殖能力,
+                  但健康存活,同時擴大作業區域,
+                  確保尚未結紮的動物不易尋找繁殖對象。於是執行乾淨的區域一旦擴大,
+                  經過流浪動物的生命周期後,
+                  將大幅減少；社區內的動物因為失去繁殖的動力，也較容易融入社區生活。
+                </p>
+                <br />
+                <h6>TNR 執行方式</h6>
+                <p>
+                  社區TNR
+                  的執行以社區住戶聯合義工成效最佳，串聯社區力量的主要因素在確保動物食物來源受控制，進而提升執行效率，掌握社區衛生與鄰里關係。負責捕捉的義工與社區餵養人或義工連繫後，選擇適當日期進場捕捉，捕捉前動物需盡量禁食，以確保就餌；捕捉完成後送往動物醫院進行絕育手術，並施打疫苗與
+                  蚤藥，為所在社區的人畜生活品質與公共衛生多設一條防線；手術結束經休養後，將動物釋放回原生區域，以確保社區動物絕育比例夠高，足以控制總數量不再提升。作業結束後，將經營區域執行成果列表，呈交市府統計整理，掌握大區域總體品質。
+                </p>
+                <br />
+                <h6>TNR 執行前置作業</h6>
+                <ol>
+                  <li>
+                    通報人或者餵養人確定貓狗口數量，餵食時間點，需固定至少一周的時間。
+                  </li>
+                  <li>
+                    若有超過一人以上的餵養人，需協調餵養時間固定在一天的某個時段。
+                  </li>
+                  <li>未見貓狗出現不可放置過多的食物在該處。</li>
+                </ol>
+                <br />
+                <h6>前置作業的重要性:</h6>
+                <p>
+                  執行TNR區塊需在最短的時間內將所有的狗貓隻都捕捉方能有效地降低貓狗口的數量，如前置作業為徹底，執行TNR的時間
+                  會拉長，耗損志工的時間跟體力，外來的貓隻也會攻擊已結紮的原生貓口。貓的警覺性會越來越強導致剩下的貓隻非常難捕捉。
+                </p>
+                <br />
+                <h6>正確的餵養方式</h6>
+                <h6>
+                  餵食沒有犯法，但是不當餵食卻可能連帶導致流浪動物受到迫害
+                </h6>
+                <ol>
+                  <li>
+                    切勿在別人的店門口，住家，庭院，車庫，車流量多的地方餵食流浪動物。我們的善意餵食卻不能成為別人的負擔，不是和的餵養的點很容易讓流浪動物處在危險的環境中。
+                  </li>
+                  <li>
+                    看到動物在進行餵食，當動物吃飽後，請將剩餘的飼料清理乾淨帶走。
+                  </li>
+                  <li>沒看到流浪動物的狀況，切勿將飼料遺留在該地。</li>
+                  <li>
+                    儘量固定同一個時段餵養，以避免流浪動物為了護食而在該處徘迴不去。
+                  </li>
+                </ol>
+                <br />
+                <h6>過剩飼料的影響</h6>
+                <ol>
+                  <li>
+                    遺留的飼料製造環境的髒亂，讓原來就不喜歡貓的民眾越來越討厭貓。
+                  </li>
+                  <li>
+                    過剩的飼料會引來不斷湧入的貓隻，貓的嗅覺可以長達兩公里，因此，有食物的地方就會是他們安身立命的地方。新來的貓會打跑原來已被結紮的貓，這樣的情形反而會傷害原來原生的貓。/li>
+                  </li>
+                  <li>
+                    沒有固定時間餵食，想到就來吃兩口，永遠會不知道貓狗口有多少，無法有效地將該地進行TNR。
+                  </li>
+                  <li>引來野狗傷害該地的貓</li>
+                  <li>一定會有討厭貓的住戶，引來人類對貓群的殺機。</li>
+                </ol>
+                <br />
+                <h6>TNR 成果效益</h6>
+                <p>
+                  執行成功的TNR社區,
+                  可量化計算地大幅降低打架叫春與跳蚤問題，最重要的是可以避免因缺乏貓而衍生的鼠害，所以經多年作業的TNR區域或是長年執行傳統
+                  捕捉移除撲殺的區域，通常需要準備額外的化學資源面對鼠患與蟲害，而這些化學製品對人體同樣沒有好處，不適合在社區公共區域投藥施作；兩者相比，TNR
+                  區域能以較安全成本控管整體生活品質，並建立較自然的生物控管關係，故執行至今，已由義工爭取，漸漸變為各里區行政幹部受薦要求義工進場執行為主力。
+                </p>
+              </div>
+              <div class="col-12 col-lg-4 d-none d-lg-block">
+                <img
+                  src="../img/TNR.png"
+                  class="d-flex ms-auto w-100"
+                  id="TNRimg"
+                />
+              </div>
+            </div>
+          </div>
+          <!-- 文字導覽列內容3 -->
+          <div
+            class="tab-pane fade text-center"
+            id="nav-contact"
+            role="tabpanel"
+            aria-labelledby="nav-contact-tab"
+            
+          >
+          <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false" data-bs-interval="false">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <iframe class="ratio-16x9 w-100" height="700px"  src="https://www.youtube.com/embed/ZjL1LAgaXOs" title="貓咪都好奸詐！親身體驗誘捕貓咪TNR過程【好味貓知識】EP15 feat.台灣之心" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+              <div class="carousel-item">
+                <iframe class="ratio-16x9 w-100 " height="700px" src="https://www.youtube.com/embed/7hy2T6_NMJw" title="這集有點沉重，你們覺得我該繼續嗎【谷阿莫Life】116 TNR" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+              <div class="carousel-item">
+                <iframe class="ratio-16x9 w-100" height="700px"  src="https://www.youtube.com/embed/cje2V2mZvWg" title="【 志祺七七 】台灣的流浪動物為什麼這麼多！？留言區超重要！" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>          
+              </div>
+            </div>
+            <button class="carousel-control-prev"  style="height: 640px;" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next " style="height: 640px;" type="button"  data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <div class="container">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+          <div class="col-md-4 d-flex align-items-center">
+            <span href="#" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+              <img src="../img/logo.png" width="24" height="24">
+            </span>
+            <span class="text-muted">&copy; 2022 Company, Inc</span>
+          </div>
+      
+          <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+            <li class="ms-3"><a class="text-muted" href="#"><img src="../img/twitter.svg" width="24" height="24"></a></li>
+            <li class="ms-3"><a class="text-muted" href="#"><img src="../img/instagram.svg" width="24" height="24"></a></li>
+            <li class="ms-3"><a class="text-muted" href="#"><img src="../img/facebook.svg" width="24" height="24"></a></li>
+          </ul>
+        </footer>
+      </div>
+      </div>
+    </div>
+    <script>
+  
+      function now_time(){
+      d = new Date
+      d = d.toLocaleTimeString()
+      document.getElementById("time").innerText= `${d}`
+      setTimeout('now_time()',1000);
+    }
+    </script>
+  </body>
+</html>

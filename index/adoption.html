@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-tw">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>動物領養系統</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="../_css/bootstrap.css" />
+    <link rel="shortcut icon" href="../img/logo.png" />
+    <link rel="bookmark" href="../img/logo.png" />
+    <link rel="stylesheet" href="../index_style.css" />
+    <base target="_blank">
+
+    <script src="../_js/bootstrap.bundle.js"></script>
+  </head>
+  <body onload="now_time()">
+    <div class="d-none d-lg-block">
+      <a href="#" style="position: fixed; bottom: 5%; right: 3%" target="_self"
+        ><img src="../img/arrow-up-square.svg" width="50px"
+      /></a>
+    </div>
+    <!-- 導覽列 -->
+    <nav class="navbar navbar-expand-lg navbar-info fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="../img/logo.png" width="30px" />動物收養網</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="http://127.0.0.1:5500/index/index.html"
+                >首頁</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">動物領養系統</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="http://127.0.0.1:5501/index/blog_index.html">留言板</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                幫助我們
+              </a>
+              <ul
+                class="dropdown-menu"
+                aria-labelledby="navbarDropdown"
+                style="background-color: #c07d62"
+              >
+              <li>
+                <a class="dropdown-item" href="#">愛心捐款</a>
+              </li>
+              <li><a class="dropdown-item" href="#">捐贈物資</a></li>
+
+              <li>
+                <a class="dropdown-item" href="#">助養</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">志工</a>
+              </li>
+              </ul>
+            </li>
+          </ul>
+        
+        <div class="float-end" id="time"></div>
+      </div>
+    </nav>
+    <div class="container">
+    <!-- 搜尋頁面 -->
+      <button
+        class="btn btn-outline-secondary"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#collapseExample"
+        aria-expanded="false"
+        aria-controls="collapseExample"
+        style="margin: 100px 0 10px 0"
+      >
+        <img src="../img/search.svg" alt=""> 篩選
+      </button>
+      <div class="collapse" id="collapseExample">
+        <div class="">
+          <h3>請輸入查詢條件</h3>
+          <br>
+          <div class="row ">
+            <div class="col-12 col-lg-8">
+                <form >
+                    <div class="form-check form-check-inline h4" style="margin-right: 30px;">
+                        <input class="form-check-input" type="radio" onclick="radioTag_dog()" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                        <label class="form-check-label" for="inlineRadio1">狗</label>
+                      </div>
+                      <div class="form-check form-check-inline h4" style="margin-right: 30px;" >
+                        <input class="form-check-input" type="radio" onclick="radioTag_cat()" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                        <label class="form-check-label" for="inlineRadio2">貓</label>
+                      </div>
+                      <div class="form-check form-check-inline h4" style="margin-right: 30px;">
+                        <input class="form-check-input"  type="radio" onclick="radioTag_other()" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                        <label class="form-check-label" for="inlineRadio3">其他</label>
+                      </div>
+                      <div class="d-inline-block me-3">
+                        <label class="d-inline h4 " for="select"  >年齡</label>
+                        <select   class="menu" aria-label="Default select example" id="select" style="width:110px ;">
+                            <option selected >--</option>
+                            <option value="1">幼年</option>
+                            <option value="2">成年</option>
+                            <option value="3">老年</option>
+                          </select>
+                        </div>
+                     
+                    <div class="d-inline-block">
+                        <label   class="d-inline h4" for="select">動物品種</label>
+                        <select class="menu" aria-label="Default select example" id="select_1" >
+                            <option selected >-動物品種-</option>
+                          </select>
+                    </div>
+                </form>
+            </div>
+            <div class="col-12 col-lg-4">
+                <div class="d-inline-block">
+                    <label class="d-inline h4 " for="select" >收容所</label>
+                    <select   class="menu " aria-label="Default select example" id="select"  style="width:230px ;">
+                        <option selected >-收容所-</option>
+                        <option value="1">新北市政府度物保護防疫處</option>
+                        <option value="2">新北市板橋區公立動物之家</option>
+                        <option value="3">新北市八里區公立動物之家</option>
+                        <option value="4">新北市五股區公立動物之家</option>
+                        <option value="5">桃園市動物保護教育園區</option>
+                        <option value="6">宜蘭縣流浪動物中途之家</option>
+                        <option value="7">新竹縣公立動物收容所</option>
+                        <option value="8">苗栗縣生態保育教育中心(動物收容所)</option>
+                        <option value="9">台中市動物之家南屯園區</option>
+                        <option value="10">台中市動物之家后里園區</option>
+                        <option value="11">彰化縣流浪狗中途之家</option>
+                        <option value="12">南投縣公立動物收容所</option>
+                        <option value="13">雲林縣流浪動物收容所</option>
+                        <option value="14">嘉義縣流浪犬中途之家</option>
+                        <option value="15">高雄壽山動物保護教育園區</option>
+                        <option value="16">台南市動物之家灣裡站</option>
+                        <option value="17">澎湖縣流浪動物收容中心</option>
+                        <option value="18">金門縣動物收容中心</option>
+                      </select>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-12 col-lg-6 mb-5">
+              <label class="h4" for="num" >收容編號</label>
+              <br><br>
+              <input type="text" id="num" placeholder="收容編號" class="contain" >
+            </div>
+            <div class="col-12 col-lg-6">
+                <label class="h4" for="num1" >動物晶片號碼</label>
+              <br><br>
+              <input type="text" id="num1" placeholder="動物晶片號碼" class="contain" >
+            </div>
+        </div>
+        <div class="mt-5 mt-lg-6 text-lg-end">
+            <button class="btn btn-outline-secondary btn-lg px-5 me-3">搜尋</button>
+            <button class="btn btn-outline-secondary btn-lg px-5">取消</button>
+        </div>
+      </div>
+    </div>
+    <br>
+    <!-- 領養圖片頁面 -->
+    <h4 style="margin-top: 10px;">動物認領養</h4>
+    <br>
+    <h6 style="font-size: 14px; color: rgba(39, 38, 38, 0.6);">總隻數 6327 隻： 犬 5656 隻 貓 667 隻 其他 4 隻</h6>
+    <div class="container ">
+        <!-- 圖片頁面1 -->
+        <div class="row mx-auto mt-3">
+            <div class="col-12 col-lg-3 col-md-6 mt-2 mt-lg-0">
+                <div class="text-center cardtitle w-100">1</div>
+                <div class="card p-1 " >
+                    
+                    <a href="http://127.0.0.1:5501/index/pet.html"><img src="../img/認養圖/黑白幼犬.jpg" class="w-100" height="200px"></a>
+                    <div class="card-body">
+                      
+                      <ul class="card-text ">
+                        <li>品種:混種</li>
+                        <li>類別:犬</li>
+                        <li>性別:公</li>
+                        <li>年齡:幼年</li>
+                        <li>我在:南屯園區</li>
+                      </ul>
+                    
+                    </div>
+                  </div>
+            </div>
+            <div class="col-12 col-lg-3 col-md-6 mt-2 mt-lg-0">
+                <div class="text-center cardtitle w-100" >2</div>
+                <div class="card p-1  ">
+                    
+                    <a href=""><img src="../img/認養圖/臘腸認養-16.jpg" class=" w-100" height="200px" ></a>
+                    <div class="card-body">
+                      
+                      <ul class="card-text">
+                        <li>品種:臘腸</li>
+                        <li>類別:犬</li>
+                        <li>性別:母</li>
+                        <li>編號:年齡:老年</li>
+                        <li>我在:台中收容所</li>
+                      </ul>
+                    
+                    </div>
+                  </div>
+            </div>
+            <div class="col-12 col-lg-3 col-md-6 mt-2 mt-lg-0">
+                <div class="text-center cardtitle w-100" >3</div>
+                <div class="card p-1 " >
+                    
+                    <a href=""><img src="../img/認養圖/橘貓-94.jpg" class="w-100" height="200px"></a>
+                    <div class="card-body">
+                      
+                      <ul class="card-text">
+                        <li>品種:混種貓</li>
+                        <li>類別:貓</li>
+                        <li>性別:公</li>
+                        <li>年齡:成年</li>
+                        <li>我在:台北收容所</li>
+                      </ul>
+                    
+                    </div>
+                  </div>
+            </div>
+            <div class="col-12 col-lg-3 col-md-6 mt-2 mt-lg-0">
+                <div class="text-center cardtitle w-100" >4</div>
+                <div class="card p-1 " >
+                    
+                    <a href=""><img src="../img/認養圖/幼貓.jpg" class="w-100" height="200px"></a>
+                    <div class="card-body">
+                      
+                      <ul class="card-text">
+                        <li>品種:混種貓</li>
+                        <li>類別:貓</li>
+                        <li>性別:母</li>
+                        <li>年齡:幼年</li>
+                        <li>我在:台中收容所</li>
+                      </ul>
+                    
+                    </div>
+                  </div>
+            </div>
+        </div>
+        <!-- 圖片頁面2 -->
+        <div class="row mx-auto mt-3">
+            <div class="col-12 col-lg-3 col-md-6 mt-2 mt-lg-0 ">
+                <div class="text-center cardtitle w-100">5</div>
+                <div class="card p-1 " >
+                    
+                    <a href=""><img src="../img/認養圖/波斯.jpg" class="w-100" height="200px"></a>
+                    <div class="card-body">
+                      
+                      <ul class="card-text ">
+                        <li>品種:波斯</li>
+                        <li>類別:貓</li>
+                        <li>性別:母</li>
+                        <li>年齡:成年</li>
+                        <li>我在:板橋區公立動物之家</li>
+                      </ul>
+                    
+                    </div>
+                  </div>
+            </div>
+            <div class="col-12 col-lg-3 col-md-6 mt-2 mt-lg-0">
+                <div class="text-center cardtitle w-100" >6</div>
+                <div class="card p-1 " >
+                    
+                    <a href=""><img src="../img/認養圖/法鬥.jpg" class="w-100" height="200px"></a>
+                    <div class="card-body">
+                      
+                      <ul class="card-text">
+                        <li>品種:法國鬥牛犬</li>
+                        <li>類別:犬</li>
+                        <li>性別:母</li>
+                        <li>年齡:成年</li>
+                        <li>我在:屏東縣公立犬貓中途之家</li>
+                      </ul>
+                    
+                    </div>
+                  </div>
+            </div>
+            <div class="col-12 col-lg-3 col-md-6 mt-2 mt-lg-0">
+                <div class="text-center cardtitle w-100" >7</div>
+                <div class="card p-1 " >
+                    
+                    <a href=""><img src="../img/認養圖/狐狸.jpg" class="w-100" height="200px"></a>
+                    <div class="card-body">
+                      
+                      <ul class="card-text">
+                        <li>品種:狐狸</li>
+                        <li>類別:犬</li>
+                        <li>性別:公</li>
+                        <li>年齡:成年</li>
+                        <li>我在:彰化縣流浪狗中途之家</li>
+                      </ul>
+                    
+                    </div>
+                  </div>
+            </div>
+            <div class="col-12 col-lg-3 col-md-6 mt-2 mt-lg-0">
+                <div class="text-center cardtitle w-100" >8</div>
+                <div class="card p-1 " >
+                    
+                    <a href=""><img src="../img/認養圖/吉娃娃.jpg" class="w-100" height="200px"></a>
+                    <div class="card-body">
+                      
+                      <ul class="card-text">
+                        <li>品種:吉娃娃</li>
+                        <li>類別:犬</li>
+                        <li>性別:公</li>
+                        <li>年齡:成年</li>
+                        <li>我在:中和區公立動物之家</li>
+                      </ul>
+                    
+                    </div>
+                  </div>
+            </div>
+        </div>
+        <!-- 圖片頁面3 -->
+      
+        <div class="row mx-auto mt-3">
+            <div class="col-12 col-lg-3 col-md-6 mt-2 mt-lg-0 ">
+                <div class="text-center cardtitle w-100">9</div>
+                <div class="card p-1 " >
+                    
+                    <a href=""><img src="../img/認養圖/虎斑.jpg" class="w-100" height="200px"></a>
+                    <div class="card-body">
+                      
+                      <ul class="card-text ">
+                        <li>品種:混種貓</li>
+                        <li>類別:貓</li>
+                        <li>性別:母</li>
+                        <li>年齡:成年</li>
+                        <li>我在:臺北市動物之家</li>
+                      </ul>
+                    
+                    </div>
+                  </div>
+            </div>
+            <div class="col-12 col-lg-3 col-md-6 mt-2 mt-lg-0">
+                <div class="text-center cardtitle w-100" >10</div>
+                <div class="card p-1 " >
+                    
+                    <a href=""><img src="../img/認養圖/柴犬.jpg" class="w-100" height="200px"></a>
+                    <div class="card-body">
+                      
+                      <ul class="card-text">
+                        <li>品種:柴犬</li>
+                        <li>類別:犬 </li>
+                        <li>性別:公</li>
+                        <li>年齡:成年</li>
+                        <li>我在:彰化縣流浪狗中途之家</li>
+                      </ul>
+                    
+                    </div>
+                  </div>
+            </div>
+            <div class="col-12 col-lg-3 col-md-6 mt-2 mt-lg-0">
+                <div class="text-center cardtitle w-100"  >11</div>
+                <div class="card p-1 " >
+                    
+                    <a href=""><img src="../img/認養圖/黑貓.jpg" class="w-100" height="200px"></a>
+                    <div class="card-body">
+                      
+                      <ul class="card-text">
+                        <li>品種:混種狗</li>
+                        <li>類別:犬</li>
+                        <li>性別:公</li>
+                        <li>年齡:幼年</li>
+                        <li>我在:宜蘭縣流浪動物中途之家</li>
+                      </ul>
+                    
+                    </div>
+                  </div>
+            </div>
+            <div class="col-12 col-lg-3 col-md-6 mt-2 mt-lg-0">
+                <div class="text-center cardtitle w-100" >12</div>
+                <div class="card p-1 " >
+                    
+                    <a href=""><img src="../img/認養圖/虎斑狗.jpg" class="w-100" height="200px"></a>
+                    <div class="card-body">
+                      
+                      <ul class="card-text">
+                        <li>品種:混種犬</li>
+                        <li>類別:犬</li>
+                        <li>性別:母</li>
+                        <li>年齡:幼年</li>
+                        <li>我在:苗栗縣生態保育教育中心</li>
+                      </ul>
+                    
+                    </div>
+                  </div>
+            </div>
+        </div>
+        <br>
+        <!-- 分頁導覽 -->
+        <nav aria-label="Page navigation example">
+          <ul class="pagination justify-content-center mt-3">
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Previous" style="color:rgb(234, 172, 134) ;">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+            <li class="page-item  " ><a class="page-link" style="color:rgb(234, 172, 134) ; background-color: rgb(215, 212, 208);" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#" style="color:rgb(234, 172, 134) ;">2</a></li>
+            <li class="page-item"><a class="page-link" href="#" style="color:rgb(234, 172, 134) ;">3</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Next" style="color:rgb(234, 172, 134) ;">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+    </div>
+
+    <!-- 頁尾 -->
+    <div class="container">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+          <div class="col-md-4 d-flex align-items-center">
+            <span href="#" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+              <img src="../img/logo.png" width="24" height="24">
+            </span>
+            <span class="text-muted">&copy; 2022 Company, Inc</span>
+          </div>
+      
+          <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+            <li class="ms-3"><a class="text-muted" href="#"><img src="../img/twitter.svg" width="24" height="24"></a></li>
+            <li class="ms-3"><a class="text-muted" href="#"><img src="../img/instagram.svg" width="24" height="24"></a></li>
+            <li class="ms-3"><a class="text-muted" href="#"><img src="../img/facebook.svg" width="24" height="24"></a></li>
+          </ul>
+        </footer>
+      </div>
+
+
+
+      <script>
+  
+        function now_time(){
+        d = new Date
+        d = d.toLocaleTimeString()
+        document.getElementById("time").innerText= `${d}`
+        setTimeout('now_time()',1000);
+      }
+
+      
+      const sel = document.getElementById("select_1")
+      function radioTag_dog(){
+         var sel_1 = sel.innerHTML=`<option selected >--</option>
+                            <option value="1">混種狗</option>
+                            <optgroup label="中小型犬">
+                            <option value="2">臘腸</option>
+                            <option value="3">貴賓</option>
+                            <option value="4">米格魯</option>
+                            <option value="5">馬爾濟斯</option>
+                            <option value="6">博美</option>
+                            <option value="7">法國鬥牛犬</option>
+                            <option value="8">英國鬥牛犬</option>
+                            <option value="9">約克夏</option>
+                            <option value="10">雪納瑞</option>
+                            <option value="11">吉娃娃</option>
+                            <option value="12">柯基</option>
+                            <option value="13">柴犬</option>
+                            <optgroup label="大型犬">
+                            <option value="14">哈士奇</option>
+                            <option value="15">高山犬</option>
+                            <option value="16">大丹狗</option>
+                            <option value="17">日本種</option>
+                            <option value="18">獒犬</option>
+                            <option value="19">杜賓</option>
+                            <option value="20">黃金獵犬</option>
+                            <option value="21">拉布拉多</option>
+                            <option value="22">邊境牧羊犬</option>
+                            <option value="23">秋田</option>
+                            <option value="24">鬆獅犬</option>
+                            <option value="25">喜樂蒂</option>
+                            <option value="26">古代牧羊犬</option>
+                            <option value="27">大麥町</option>`}
+      
+      function radioTag_cat(){
+         var sel_1 = sel.innerHTML=`<option selected >--</option>
+                            <option value="1">混種貓</option>
+                            <option value="2">曼赤肯</option>
+                            <option value="3">英國短毛</option>
+                            <option value="4">美國短毛</option>
+                            <option value="5">緬因</option>
+                            <option value="6">金吉拉</option>
+                            <option value="7">俄羅斯藍貓</option>
+                            <option value="8">英國藍貓</option>
+                            <option value="9">豹貓</option>
+                            <option value="10">加菲貓</option>
+                            <option value="11">摺耳貓</option>
+                            <option value="12">波斯</option>
+                            <option value="13">其他</option>`
+
+      }
+      function radioTag_other(){
+         var sel_1 = sel.innerHTML=`<option selected >--</option>
+                            <option value="1">寵物兔</option>
+                            <option value="2">寵物鼠</option>`
+                            
+      }
+      </script>
+  </body>
+</html>

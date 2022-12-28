@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-tw">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>動物領養系統</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="../_css/bootstrap.css" />
+    <link rel="shortcut icon" href="../img/logo.png" />
+    <link rel="bookmark" href="../img/logo.png" />
+    <link rel="stylesheet" href="../index_style.css" />
+    <base target="_blank">
+    <script src="../_js/bootstrap.bundle.js"></script>
+
+    <style>
+      b {
+        background-color: bisque;
+        display: flex;
+        justify-content: space-around;
+      }
+    </style>
+  </head>
+  <body onload="now_time()">
+    <div class="d-none d-lg-block">
+      <a href="#" style="position: fixed; bottom: 5%; right: 3%" target="_self"
+        ><img src="../img/arrow-up-square.svg" width="50px"
+      /></a>
+    </div>
+    <!-- 導覽列 -->
+    <nav class="navbar navbar-expand-lg navbar-info fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="http://127.0.0.1:5501/index/index.html">
+          <img src="../img/logo.png" width="30px" />動物收養網</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="http://127.0.0.1:5501/index/index.html"
+                >首頁</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="http://127.0.0.1:5501/index/adoption.html"
+                >動物領養系統</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="http://127.0.0.1:5501/index/blog_index.html"
+                >留言板</a
+              >
+            </li>
+            <li class="nav-item dropdown" >
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                
+              >
+                幫助我們
+              </a>
+              <ul
+                class="dropdown-menu blog_ul"
+                aria-labelledby="navbarDropdown"
+                style="background-color: #c07d62"
+              >
+                <li>
+                  <a class="dropdown-item" href="#">愛心捐款</a>
+                </li>
+                <li><a class="dropdown-item" href="#">捐贈物資</a></li>
+
+                <li>
+                  <a class="dropdown-item" href="#">助養</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">志工</a>
+                </li>
+              </ul>
+            </li>
+          </li>
+       </ul>
+          <div class="float-end" id="time"></div>
+      </div>
+    </nav>
+    <!-- 留言板 -->
+    <div class="container" style="margin-top: 100px">
+      <div class="row">
+        <div class="col-12">
+          <h4>【心得】最近去領養了一隻米克斯</h4>
+          <hr />
+          <a class="btn" href="#" style="opacity: 0.5; border: 1px solid black;">樓主</a>
+          <span class="mt-2 ms-1">小明</span>
+          <p class="mt-2" style="font-size: 12px; opacity: 0.5; margin-left: 10px;">一小時前</p>
+          <br />
+          <div class="row">
+            <div class="col-lg-8">
+              <img src="../img/認養圖/小虎版.jpg" alt="">
+              <p style="font-size: 20px;">這是小虎斑結紮後的樣子，超迷你的剪耳
+            因為她是我的第一隻TNR，所以剪耳方面跟醫生有點溝通不良。
+            
+            如果，我因為害怕沒有幫他們做TNR那現在會是怎麼樣呢?我完全不敢去想像。
+            
+            就這樣過快兩年，期間消失了一些貓咪，可是他們這兩位媽媽直到現在都還健在喔!
+            
+            現在看到他們的耳朵缺了角，但是不需要再被發情困擾，不需要再被小貓羈絆住
+            
+            TNR的他們，想在哪裡多睡一會，想在草地多玩一會，都沒關係
+            
+            耳朵缺了角，可是心卻感到更自由。</p></div>
+            <div class="col"></div>
+          
+          </div>
+          <br />
+          <div style="background-color:rgb(248, 235, 221) ; padding: 0px 20px 20px 20px ; border-radius: 10px;">
+          
+          <br>
+            <h6 >留言區</h6>
+            
+            <ul class="plates  blog_ul"></ul>
+            <form class="add-items">
+              <div class="input-group">
+              <label for="MessageName" class="input-group-text ">暱稱:</label>
+              <input
+                type="text"
+                id="MessageName"
+                name="MessageName"
+                class="UserName w-25"
+               
+                required
+              />
+              <label for="textarea" class="input-group-text d-inline">留言內容:</label>
+              <input type="text" name="item" id="textarea" style=" border: 1px solid rgba(128, 128, 128,0.5);"  class="w-50" required  ></input>
+              <input type="submit" class="btn "  />
+            </div>
+            </div>
+             <br>
+              
+            </form>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- 頁尾 -->
+    <div class="container">
+      <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <div class="col-md-4 d-flex align-items-center">
+          <span href="#" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+            <img src="../img/logo.png" width="24" height="24">
+          </span>
+          <span class="text-muted">&copy; 2022 Company, Inc</span>
+        </div>
+    
+        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+          <li class="ms-3"><a class="text-muted" href="#"><img src="../img/twitter.svg" width="24" height="24"></a></li>
+          <li class="ms-3"><a class="text-muted" href="#"><img src="../img/instagram.svg" width="24" height="24"></a></li>
+          <li class="ms-3"><a class="text-muted" href="#"><img src="../img/facebook.svg" width="24" height="24"></a></li>
+        </ul>
+      </footer>
+    </div>
+
+
+    
+    <script>
+      // 時間函式
+      function now_time() {
+        d = new Date();
+        d = d.toLocaleTimeString();
+        document.getElementById("time").innerText = `${d}`;
+        setTimeout("now_time()", 1000);
+      }
+      // 留言內容
+      const addItems = document.querySelector(".add-items");
+      // 先抓from
+      const itemsList = document.querySelector(".plates");
+      // 抓ui
+      const items = JSON.parse(localStorage.getItem("items")) || [];
+      // 做一個空陣列暫存給輸入的資料 localStorage.getItem設置取得本地記憶體 JSON.parse(回傳值是字串要轉成物件) 
+      function addItem(e) {
+        e.preventDefault();
+        // 避免每次提交造成過度讀取
+        const text = document.querySelector("[name=item]").value;
+        console.log(text)
+        const MyName = this.querySelector("[name=MessageName]").value;
+        console.log(MyName)
+        var d = new Date();
+        var dd = d.toLocaleDateString() + d.toLocaleTimeString();
+        //設定一個常數抓輸入窗的值
+        const item = {
+          text,
+          MyName,
+          dd,
+        };
+        //設定一個物件裡面設需要的屬性會從輸入窗取值
+        items.push(item);
+        // 把物件item加到items陣列
+        populateList(items, itemsList);
+        // 使用下面的函式來把資料存到本地網頁記憶體
+        localStorage.setItem("items", JSON.stringify(items));
+        // 在本地網頁記憶體上存放剛剛輸入的資料
+        this.reset();
+      }
+     
+      function populateList(plates = [], platesList) {
+        platesList.innerHTML = plates
+          .map((plate, i) => {
+            console.log(plates)
+            //i: index
+            return `<li class="list" >
+          <p style="font-size:14px ;display:inline-block;color:rgba(74, 93, 71, 0.7) ">${plate.MyName}</p>  <sanp style="float:right;color:rgba(74, 93, 71, 0.7)">${plate.dd}</sanp>
+          <br>
+          ${plate.text} 
+          <br>
+          </li>
+        `
+       ;
+        })
+          .join(""); 
+          
+      }
+      addItems.addEventListener("submit", addItem);
+      populateList(items, itemsList);
+      // var textName = document.getElementById("textarea");
+      // var Name = document.getElementById("Name");
+      // var dd = new Date().toLocaleTimeString();
+
+      // var textarea = () => {
+      //   var b = document.getElementById("p");
+      //   var c = b.insertRow();
+      //   c.insertCell().innerHTML = ` <p style="font-size:14px;background-color: bisque;word-spacing: 100px">${
+      //     dd + Name.value
+      //   }</p>${textName.value}`;
+      // };
+    </script>
+  </body>
+</html>

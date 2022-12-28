@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-tw">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>動物收養網</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="../_css/bootstrap.css" />
+    <link rel="shortcut icon" href="../img/logo.png" />
+    <link rel="bookmark" href="../img/logo.png" />
+    <link rel="stylesheet" href="../index_style.css" />
+    <base target="_blank" />
+
+    <script src="../_js/bootstrap.bundle.js"></script>
+  </head>
+  <body onload="now_time()">
+    <div class="d-none d-lg-block">
+      <a href="#" style="position: fixed; bottom: 5%; right: 3%" target="_self"
+        ><img src="../img/arrow-up-square.svg" width="50px"
+      /></a>
+    </div>
+    <!-- 導覽列 -->
+    <nav class="navbar navbar-expand-lg navbar-info fixed-top " >
+        <div class="container-fluid ">
+          
+          <a class="navbar-brand" href="#">
+            <img src="../img/logo.png" width="30px" />動物收養網</a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="http://127.0.0.1:5501/index/index.html"
+                  >首頁</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="http://127.0.0.1:5501/index/adoption.html">動物領養系統</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="http://127.0.0.1:5501/index/blog_index.html">留言板</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  幫助我們
+                </a>
+                <ul
+                  class="dropdown-menu"
+                  aria-labelledby="navbarDropdown"
+                  style="background-color: #c07d62"
+                >
+                  <li>
+                    <a class="dropdown-item" href="#">愛心捐款</a>
+                  </li>
+                  <li><a class="dropdown-item" href="#">捐贈物資</a></li>
+  
+                  <li>
+                    <a class="dropdown-item" href="#">助養</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">志工</a>
+                  </li>
+                </ul>
+              </li>
+            </ul> 
+          <div class="float-end" id="time"></div>
+        </div>
+      </nav>
+      <div class="pet" >
+        <h5 style="display:inline-block ;">認養動物資料</h5> 
+        <button class="btn"><a class="link" href="http://127.0.0.1:5501/index/adoption.html"> 回上一頁</a></button> 
+      </div>
+      <br><br>
+      <div class="container">
+      <div class="row">
+        <div class="col-12 col-lg-5 p-3 rounded" style="background-color:lightgray ;" >
+            <img src="../img/認養圖/黑白幼犬.jpg" alt="" class="w-100 img-thumbnail" id="main">
+            <hr>
+            <div class="row">
+                <div class="col-3 " >
+                    <img src="../img/認養圖/黑白幼犬.jpg" onclick="replace(this)" class="w-100 view" height="100px" >
+                </div>
+                <div class="col-3 ">
+                    <img src="../img/認養圖/黑白幼犬2.jpg" onclick="replace(this)" class="w-100 view"  >
+                </div>
+                <div class="col-3 ">
+                  <img src="../img/認養圖/黑白幼犬3.jpg" onclick="replace(this)" class="w-100 view" height="100px" >
+                </div>
+                <div class="col-3 ">
+                  <img src="../img/認養圖/黑白幼犬4.jpg" onclick="replace(this)" class="w-100 view" height="100px" >
+
+                </div>
+            </div>
+            </div>
+        <div class="col-12 col-lg-7 ps-5">
+            <ul class="h4 mt-4 mt-lg-0">
+                <li>入所天數: 3天</li>
+                <br>
+                <li>入所日期: 2022/09/13</li>
+                <br>
+                <li>收容編號: x1</li>
+                <br>
+                <li>來源行政區: 南屯區</li>
+                <br>
+                <li>年齡:幼犬</li>
+                <br>
+                <li>動物別: 狗</li>
+                <br>
+                <li>動物性別: 公</li>
+                <br>
+                <li>毛色: 黑白</li>
+                <br>
+                <li>動物品種: 混種狗</li>
+                <br>
+                <li>是否開放領養: 是</li>
+                <br>
+                <li>公告收容所: 台中市動物之家南屯園區</li>
+                <br>
+                <li>收容所電話: 0800-780-000</li>
+            </ul>
+            <br>
+            <button class="btn btn-warning  w-75"><span>我有意願認養</ㄋp> </button>
+        </div>
+      </div>
+      <!-- 頁尾 -->
+    <div class="container">
+      <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <div class="col-md-4 d-flex align-items-center">
+          <span href="#" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+            <img src="../img/logo.png" width="24" height="24">
+          </span>
+          <span class="text-muted">&copy; 2022 Company, Inc</span>
+        </div>
+    
+        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+          <li class="ms-3"><a class="text-muted" href="#"><img src="../img/twitter.svg" width="24" height="24"></a></li>
+          <li class="ms-3"><a class="text-muted" href="#"><img src="../img/instagram.svg" width="24" height="24"></a></li>
+          <li class="ms-3"><a class="text-muted" href="#"><img src="../img/facebook.svg" width="24" height="24"></a></li>
+        </ul>
+      </footer>
+    </div>
+
+    </div>
+
+
+
+
+    <script>
+        // 時間函式
+      function now_time() {
+        d = new Date();
+        d = d.toLocaleTimeString();
+        document.getElementById("time").innerText = `${d}`;
+        setTimeout("now_time()", 1000);
+      }
+        // 圖片更換
+        function replace(imgs){
+        var imgTag = document.getElementById("main")
+        imgTag.src=imgs.src}
+        
+       
+    </script>
+  </body>
+</html>
